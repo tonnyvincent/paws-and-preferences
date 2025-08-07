@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paws & Preferences</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<img id="hanging-cat" src="assets/cat-hanging.png" alt="Hanging Cat">
+<img id="peeking-cat" src="assets/cat-peeking.png" alt="Peeking Cat">
+
+<div class="middle-content">
+  
+  <h1>Paws & Preferences</h1>
+
+  <div id="card-wrapper">
+    <div id="card-container"></div>
+
+    <div class="paw-arrow left-arrow">
+      <div class="paw-img-wrapper">
+        <img src="assets/cat-paw.png" alt="Left Paw">
+      </div>
+    </div>
+
+    <div class="paw-arrow right-arrow">
+      <div class="paw-img-wrapper">
+        <img src="assets/cat-paw-1.png" alt="Right Paw">
+      </div>
+    </div>
+
+    <h2>Find Your Favourite Kitty</h2>
+
+  </div>
+
+  <div id="summary" class="hidden"></div>
+
+  <div id="glow-left"></div>
+  <div id="glow-right"></div>
+
+  <div id="image-modal" class="hidden">
+    <div id="image-modal-content">
+      <span id="close-modal">&times;</span>
+      <img id="modal-img" src="" alt="Preview">
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
