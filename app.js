@@ -6,18 +6,17 @@ const hangingCat = document.getElementById('hanging-cat');
 const peekingCat = document.getElementById('peeking-cat');
 
 let catImages = [
-  'https://cataas.com/cat/says/hello?width=360&height=640&fit=cover&timestamp=' + Date.now(),
-  'https://cataas.com/cat/says/meow?width=360&height=640&fit=cover&timestamp=' + (Date.now() + 1),
-  'https://cataas.com/cat?width=360&height=640&fit=cover&timestamp=' + (Date.now() + 2),
-  'https://cataas.com/cat/cute?width=360&height=640&fit=cover&timestamp=' + (Date.now() + 3),
-  'https://cataas.com/cat/says/hi?width=360&height=640&fit=cover&timestamp=' + (Date.now() + 4),
-  'https://cataas.com/cat/says/kitten?width=360&height=640&fit=cover&timestamp=' + (Date.now() + 5),
-  'https://cataas.com/cat/says/love?width=360&height=640&fit=cover&timestamp=' + (Date.now() + 6),
-  'https://cataas.com/cat/says/yes?width=360&height=640&fit=cover&timestamp=' + (Date.now() + 7),
-  'https://cataas.com/cat/says/no?width=360&height=640&fit=cover&timestamp=' + (Date.now() + 8),
-  'https://cataas.com/cat/says/purr?width=360&height=640&fit=cover&timestamp=' + (Date.now() + 9)
+  'https://cataas.com/cat/says/hello?width=360&height=640&fit=contain&timestamp=' + Date.now(),
+  'https://cataas.com/cat/says/meow?width=360&height=640&fit=contain&timestamp=' + (Date.now() + 1),
+  'https://cataas.com/cat?width=360&height=640&fit=contain&timestamp=' + (Date.now() + 2),
+  'https://cataas.com/cat/cute?width=360&height=640&fit=contain&timestamp=' + (Date.now() + 3),
+  'https://cataas.com/cat/says/hi?width=360&height=640&fit=contain&timestamp=' + (Date.now() + 4),
+  'https://cataas.com/cat/says/kitten?width=360&height=640&fit=contain&timestamp=' + (Date.now() + 5),
+  'https://cataas.com/cat/says/love?width=360&height=640&fit=contain&timestamp=' + (Date.now() + 6),
+  'https://cataas.com/cat/says/yes?width=360&height=640&fit=contain&timestamp=' + (Date.now() + 7),
+  'https://cataas.com/cat/says/no?width=360&height=640&fit=contain&timestamp=' + (Date.now() + 8),
+  'https://cataas.com/cat/says/purr?width=360&height=640&fit=contain&timestamp=' + (Date.now() + 9)
 ];
-
 
 let likedCats = [];
 let dislikedCats = [];
