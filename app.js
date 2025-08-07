@@ -23,50 +23,68 @@ let dislikedCats = [];
 let currentIndex = 0;
 
 function displayCat() {
+  cardContainer.innerHTML = '';
+
   if (currentIndex >= catImages.length) {
     showSummary();
     return;
   }
 
-  const card = document.createElement('div');
-  card.className = 'cat-card';
-  card.innerHTML = `<img src="${catImages[currentIndex]}" alt="cat" crossorigin="anonymous">`;
+  const maxStack = 4;
+  const stack = catImages.slice(currentIndex, currentIndex + maxStack);
 
-  let startX;
+  stack.forEach((src, i) => {
+    const card = document.createElement('div');
+    card.className = 'cat-card';
+    card.innerHTML = `<img src="${src}" alt="cat" crossorigin="anonymous">`;
 
-  card.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
+    // Drastic visual effect
+    const scale = 1 - i * 0.1;          // Bigger scale gap
+    const translateY = i * 35;          // Higher Y offset
+    const rotate = i * 5;               // More rotation
+
+    card.style.transform = `scale(${scale}) translateY(${translateY}px) rotate(${rotate}deg)`;
+    card.style.zIndex = maxStack - i;
+    card.style.opacity = i === maxStack - 1 ? 0 : 1;
+
+    if (i === 0) {
+      // Only top card is swipeable
+      let startX;
+
+      card.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+      });
+
+      const glowLeft = document.getElementById('glow-left');
+      const glowRight = document.getElementById('glow-right');
+
+      card.addEventListener('touchend', e => {
+        const endX = e.changedTouches[0].clientX;
+        const diffX = endX - startX;
+
+        if (diffX > 50) {
+          likedCats.push(catImages[currentIndex]);
+          card.style.transform = 'translateX(100%) rotate(20deg)';
+          glowRight.style.opacity = 1;
+          setTimeout(() => glowRight.style.opacity = 0, 400);
+        } else if (diffX < -50) {
+          dislikedCats.push(catImages[currentIndex]);
+          card.style.transform = 'translateX(-100%) rotate(-20deg)';
+          glowLeft.style.opacity = 1;
+          setTimeout(() => glowLeft.style.opacity = 0, 400);
+        } else {
+          return;
+        }
+
+        currentIndex++;
+        setTimeout(() => {
+          displayCat();
+        }, 300);
+      });
+    }
+
+    cardContainer.appendChild(card);
   });
-
-  const glowLeft = document.getElementById('glow-left');
-  const glowRight = document.getElementById('glow-right');
-
-card.addEventListener('touchend', e => {
-  const endX = e.changedTouches[0].clientX;
-  const diffX = endX - startX;
-
-  if (diffX > 50) {
-    likedCats.push(catImages[currentIndex]);
-    card.style.transform = 'translateX(100%) rotate(20deg)';
-    glowRight.style.opacity = 1;
-    setTimeout(() => glowRight.style.opacity = 0, 400);
-  } else if (diffX < -50) {
-    dislikedCats.push(catImages[currentIndex]);
-    card.style.transform = 'translateX(-100%) rotate(-20deg)';
-    glowLeft.style.opacity = 1;
-    setTimeout(() => glowLeft.style.opacity = 0, 400);
-  } else {
-    return;
-  }
-
-    currentIndex++;
-    setTimeout(() => {
-      card.remove();
-      displayCat();
-    }, 300);
-  });
-
-  cardContainer.appendChild(card);
 }
 
 function showSummary() {

@@ -24,7 +24,7 @@ body {
 }
 
 h1 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: -25px;
   color: #ce0217 !important;
   text-shadow: 2px 2px 4px rgb(206,2,23,0.4);
@@ -36,7 +36,7 @@ h1 {
 
 h2 {
   font-size: 0.9rem;
-  margin-top: 20px;
+  margin-top: 50px;
   color: #ce0217;
   text-shadow: 2px 2px 4px rgb(206,2,23,0.4);
   text-align: center;
@@ -147,7 +147,7 @@ h2 {
   height: 100%;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d;
