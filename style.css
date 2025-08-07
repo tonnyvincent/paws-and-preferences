@@ -113,6 +113,9 @@ h2 {
   height: 100%;
 }
 
+.paw-img-wrapper img {
+  animation: neon-pulse 1.5s infinite;
+}
 
 /* Left arrow */
 .left-arrow {
@@ -285,4 +288,13 @@ h2 {
 
 #peeking-cat.show {
   animation: peekUp 0.8s ease-out;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px #ff66cc) drop-shadow(0 0 16px #ff66cc);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #ff99dd) drop-shadow(0 0 24px #ff99dd);
+  }
 }
