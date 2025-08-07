@@ -31,7 +31,7 @@ h1 {
   text-align: center;
   justify-content: center;
   width: 45dvw;
-  max-width: 400px;
+  max-width: 360px;
 }
 
 h2 {
@@ -42,7 +42,7 @@ h2 {
   text-align: center;
   justify-content: center;
   width: 55dvw;
-  max-width: 400px;
+  max-width: 360px;
 }
 
 #hanging-cat {
@@ -77,14 +77,14 @@ h2 {
 #card-wrapper {
   position: relative;
   width: 55dvw;
-  max-width: 400px;
+  max-width: 360px;
   height: 45vh;
 }
 
 #card-container {
   position: relative;
   width: 55dvw;
-  max-width: 400px;
+  max-width: 360px;
   height: 50dvh;
   margin-top: 0.5dvh;
   perspective: 1000px;
